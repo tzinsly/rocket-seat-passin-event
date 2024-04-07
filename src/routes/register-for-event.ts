@@ -35,12 +35,12 @@ export async function registerForEvent(app: FastifyInstance) {
         console.log("Registering for event...")
 
         const data = req.body;
-        const eventId = req.params;
+        const params = req.params;
 
         //validate if event exists
         const eventExists = await prisma.event.findFirst({
             where: {
-                id: eventId.eventId
+                id: params.eventId
             }
         })
 
@@ -52,7 +52,7 @@ export async function registerForEvent(app: FastifyInstance) {
         const attendeeExists = await prisma.attendee.findUnique({
             where: {
                 eventId_email: {
-                    eventId: eventId.eventId,
+                    eventId: params.eventId,
                     email: data.email
                 }   
             }
@@ -65,7 +65,7 @@ export async function registerForEvent(app: FastifyInstance) {
         //validate if event is full
         const numberOfAttendeesForThisEvent = await prisma.attendee.count({
             where: {
-                eventId: eventId.eventId
+                eventId: params.eventId
             }
         })
 
@@ -77,7 +77,7 @@ export async function registerForEvent(app: FastifyInstance) {
             data: {
                 name: data.name,
                 email: data.email,
-                eventId: eventId.eventId
+                eventId: params.eventId
             }
         })
 
