@@ -13,14 +13,24 @@ Persistency layear
 ### How to run the application
 
 1. Install dependencies
+```
    $ npm install typescript @types/node -D
    $ npm install fastify
    $ npm install @prisma
    $ npm install fastify-type-provider-zod
-   
+```   
+
 2. Executing the project 
+```
 $ npm run <name-of-script>
-*Check scripts configuration inside package.json
+```
+> Check scripts configuration inside package.json
+
+### Modifying schema
+In order to make changes to the database, you need to edit the file *.prisma/schema.prisma* and then run the following command:
+```
+    $ npx prisma migrate dev
+```
 
 ## Notes
 ### npx command

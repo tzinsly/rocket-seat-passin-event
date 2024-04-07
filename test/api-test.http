@@ -6,3 +6,13 @@ Content-Type: application/json
     "details": "This is the largest Java conference in the world",
     "maximumAttendees" : 150
 }
+
+###
+
+POST http://localhost:3001/events/c6eb41a3-e75f-446e-963b-14a0cb2506df/register
+Content-Type: application/json
+
+{
+    "name": "Fulano de tal 2",
+    "email": "fulano2@mycompany.com"
+}

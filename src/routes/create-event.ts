@@ -31,7 +31,7 @@ export async function createEvent(app: FastifyInstance) {
             const data = req.body;
             const urlFriendlySlug = generateSlugFromTitle(data.title)
 
-            const eventWithSameSlug = await prisma.events.findFirst({
+            const eventWithSameSlug = await prisma.event.findFirst({
                 where: {
                     slug: urlFriendlySlug
                 }
@@ -43,7 +43,7 @@ export async function createEvent(app: FastifyInstance) {
 
 
             //Creating data inside prisma itself - should we move to a different file later?
-            const createdEvent = await prisma.events.create({
+            const createdEvent = await prisma.event.create({
                 data: {
                     title: data.title,
                     details: data.details,
