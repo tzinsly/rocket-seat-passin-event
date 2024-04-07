@@ -24,3 +24,11 @@ GET http://localhost:3001/events/c6eb41a3-e75f-446e-963b-14a0cb2506df
 ###
 
 GET http://localhost:3001/attendees/1/badge
+
+###
+
+GET http://localhost:3001/attendees/1/check-in //TODO not working
+
+###
+
+GET http://localhost:3001/events/c6eb41a3-e75f-446e-963b-14a0cb2506df/attendees

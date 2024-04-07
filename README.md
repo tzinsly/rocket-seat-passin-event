@@ -53,6 +53,11 @@ In order to make changes to the database, you need to edit the file *.prisma/sch
 ```
 > it comprises both: the "compilation" or transformation of typescript into a valid javascript and then its execution.
 
+tsup - used to transcode our app to javascrip
+```
+    npm install tsup -D
+```
+
 
 ## Features
 
