@@ -1,0 +1,8 @@
+POST http://localhost:3001/events
+Content-Type: application/json
+
+{
+    "title": "Mock Devoxx",
+    "details": "This is the largest Java conference in the world",
+    "maximumAttendees" : 150
+}
